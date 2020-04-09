@@ -1,32 +1,25 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<template>  
+  <router-view />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { Component } from "sitewhere-ide-common";
+Component.registerHooks([
+  "beforeRouteEnter",
+  "beforeRouteLeave",
+  "beforeRouteUpdate" // for vue-router 2.2+
+]);
+import Vue from "vue";
 
-#nav {
-  padding: 30px;
-}
+@Component({})
+export default class App extends Vue {}
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style lang="scss">
+@import "~vuetify/dist/vuetify.min.css";
+@import "~leaflet/dist/leaflet.css";
+@import "~leaflet-draw/dist/leaflet.draw.css";
+@import "~highlight.js/styles/default.css";
+@import "~flatpickr/dist/flatpickr.css";
+@import "~material-icons/iconfont/material-icons.css";
 </style>
