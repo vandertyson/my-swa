@@ -232,7 +232,7 @@ export default class Login extends Vue {
     this.$store.commit("selectedTenant", null);
 
     // Get JWT from server.
-    try {
+    try {      
       this.loggingIn = true;
       let response: AxiosResponse<any> = await getJwt(this.$store);
       let jwt: string = response.headers["x-sitewhere-jwt"];

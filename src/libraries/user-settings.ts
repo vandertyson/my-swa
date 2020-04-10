@@ -4,9 +4,9 @@
 // import IsDev from "electron-is-dev";
 // import { v4 as uuid } from "uuid";
 // import { remote } from "electron";
-var OS = require("os")
-var fs = require('fs');
-var path = require("path")
+// var OS = require("os")
+// var fs = require('fs');
+// var path = require("path")
 var uuid = require('uuid');
 
 
@@ -26,7 +26,8 @@ export class Settings {
    * Detect whether the settings file exists.
    */
   public static exists(): boolean {
-    return fs.existsSync(Settings.getSettingsPath());
+    // return fs.existsSync(Settings.getSettingsPath());
+    return !localStorage.getItem(Settings.getSettingsPath())
   }
 
   /**
@@ -38,10 +39,11 @@ export class Settings {
       this.save(defaults);
       return defaults;
     } else {
-      let content: string = fs.readFileSync(
-        Settings.getSettingsPath(),
-        "utf8"
-      );
+    //   let content: string = fs.readFileSync(
+    //     Settings.getSettingsPath(),
+    //     "utf8"
+    //   );
+      let content = localStorage.getItem(Settings.getSettingsPath())||"{}"
       let json: any = JSON.parse(content);
       let settings: Settings = new Settings();
       settings.userId = json["userId"];
@@ -63,23 +65,29 @@ export class Settings {
    * @param settings
    */
   public static save(settings: Settings): void {
+    // let json: any = {};
+    // json["userId"] = settings.userId;
+    // json["initialVersion"] = settings.initialVersion;
+    // fs.writeFileSync(
+    //   Settings.getSettingsPath(),
+    //   JSON.stringify(json, null, "\t")
+    // );
     let json: any = {};
     json["userId"] = settings.userId;
     json["initialVersion"] = settings.initialVersion;
-    fs.writeFileSync(
-      Settings.getSettingsPath(),
-      JSON.stringify(json, null, "\t")
-    );
+    localStorage.setItem(Settings.getSettingsPath(), JSON.stringify(json, null, "\t"))
   }
 
   /**
    * Get path to user settings file.
    */
   public static getSettingsPath(): string {
-    let sitewhere = path.join(OS.homedir(), ".sitewhere");
-    if (!fs.existsSync(sitewhere)) {
-      fs.mkdirSync(sitewhere);
-    }
-    return path.join(sitewhere, "settings.json");
+//     let sitewhere = path.join(OS.homedir(), ".sitewhere");
+//     if (!fs.existsSync(sitewhere)) {
+//       fs.mkdirSync(sitewhere);
+//     }
+//     return path.join(sitewhere, "settings.json");
+//   }
+    return ".sitewhere_user_setting"
   }
 }
