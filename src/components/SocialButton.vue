@@ -30,9 +30,9 @@ export default class SocialButton extends Vue {
   }
 
   // Open link in external browser.
-  openLink() {
+  openLink() {    
     if (this.url) {
-      // Electron.shell.openExternal(this.url);
+      window.open(this.url, "_blank");    
       console.log("Removed Electron")
       GoogleAnalytics.sendSocialMediaEvent(this.settings, this.type);
     }

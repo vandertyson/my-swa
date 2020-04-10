@@ -14,7 +14,7 @@
             :title="discordTitle"
             url="https://discord.gg/sq7sH7B"
             width="400"
-            height="400"
+            height="400"            
           ></social-button>
           <social-button
             :settings="settings"
@@ -97,29 +97,7 @@
           <remotes-dialog ref="remotes" @save="onRemotesUpdated" />
         </div>
       </v-container>
-      <div style="-webkit-app-region: drag" class="draggable-area"></div>
-      <v-system-bar color="transparent" class="title-bar">
-        <v-btn
-          flat
-          icon
-          small
-          class="ma-0 mt-2 title-bar-button"
-          color="grey"
-          @click="openWebTools"
-        >
-          <v-icon>menu</v-icon>
-        </v-btn>
-        <v-spacer></v-spacer>
-        <v-btn flat icon small class="ma-0 mt-2 title-bar-button" color="grey" @click="minWindow">
-          <v-icon>remove</v-icon>
-        </v-btn>
-        <v-btn flat icon small class="ma-0 mt-2 title-bar-button" color="grey" @click="maxWindow">
-          <v-icon>check_box_outline_blank</v-icon>
-        </v-btn>
-        <v-btn flat icon small class="ma-0 mt-2 title-bar-button" color="grey" @click="closeWindow">
-          <v-icon>close</v-icon>
-        </v-btn>
-      </v-system-bar>
+      <div style="-webkit-app-region: drag" class="draggable-area"></div>     
     </main>
   </v-app>
 </template>
@@ -246,7 +224,7 @@ export default class Login extends Vue {
       }
     }
     this.loggingIn = false;
-  }
+  }  
 
   // Get user for username and route to system page.
   async onJwtAcquired(jwt: string) {
@@ -315,7 +293,7 @@ export default class Login extends Vue {
     //Electron.remote.getCurrentWindow().close();
     //Electron.app.quit();
     console.log("Removed Electron")
-  }
+  }  
 }
 </script>
 
