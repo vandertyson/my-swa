@@ -8252,30 +8252,25 @@
       undefined
     );
 
-  // import Electron from "electron";
   var InAppSystemBar = /** @class */ (function (_super) {
       __extends(InAppSystemBar, _super);
       function InAppSystemBar() {
           var _this = _super !== null && _super.apply(this, arguments) || this;
-          _this.title = "Sitewhere Administrative App";
+          _this.title = "Putang ina mo";
           return _this;
       }
       InAppSystemBar.prototype.openWebTools = function () {
-          // Electron.remote.getCurrentWebContents().openDevTools();
-          console.log("removed Electron");
+          // Electron.remote.getCurrentWebContents().openDevTools();    
       };
       InAppSystemBar.prototype.minWindow = function () {
           // Electron.remote.getCurrentWindow().minimize();
-          console.log("removed Electron");
       };
       InAppSystemBar.prototype.maxWindow = function () {
           // Electron.remote.getCurrentWindow().maximize();
-          console.log("removed Electron");
       };
       InAppSystemBar.prototype.closeWindow = function () {
           // Electron.remote.getCurrentWindow().close();
           // Electron.app.quit();
-          console.log("removed Electron");
       };
       InAppSystemBar = __decorate([
           sitewhereIdeCommon.Component({})
@@ -8291,66 +8286,7 @@
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
-    return _c(
-      "v-system-bar",
-      { staticClass: "title-bar", attrs: { color: "#444" } },
-      [
-        _c(
-          "v-btn",
-          {
-            staticClass: "ma-0 title-bar-button",
-            attrs: { flat: "", icon: "", small: "" },
-            on: { click: _vm.openWebTools }
-          },
-          [_c("v-icon", { attrs: { color: "white" } }, [_vm._v("menu")])],
-          1
-        ),
-        _vm._v(" "),
-        _c("span", { staticClass: "system-bar-title" }, [
-          _vm._v(_vm._s(_vm.title))
-        ]),
-        _vm._v(" "),
-        _c("v-spacer"),
-        _vm._v(" "),
-        _c(
-          "v-btn",
-          {
-            staticClass: "ma-0 title-bar-button",
-            attrs: { flat: "", icon: "", small: "" },
-            on: { click: _vm.minWindow }
-          },
-          [_c("v-icon", { attrs: { color: "white" } }, [_vm._v("remove")])],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "v-btn",
-          {
-            staticClass: "ma-0 title-bar-button",
-            attrs: { flat: "", icon: "", small: "" },
-            on: { click: _vm.maxWindow }
-          },
-          [
-            _c("v-icon", { attrs: { color: "white" } }, [
-              _vm._v("check_box_outline_blank")
-            ])
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "v-btn",
-          {
-            staticClass: "ma-0 title-bar-button",
-            attrs: { flat: "", icon: "", small: "" },
-            on: { click: _vm.closeWindow }
-          },
-          [_c("v-icon", { attrs: { color: "white" } }, [_vm._v("close")])],
-          1
-        )
-      ],
-      1
-    )
+    return _c("div")
   };
   var __vue_staticRenderFns__$E = [];
   __vue_render__$E._withStripped = true;
@@ -8358,11 +8294,11 @@
     /* style */
     const __vue_inject_styles__$E = function (inject) {
       if (!inject) return
-      inject("data-v-6245915f_0", { source: "\n.title-bar-button[data-v-6245915f] {\n  -webkit-app-region: no-drag;\n}\n.system-bar-title[data-v-6245915f] {\n  color: #eee;\n  margin-left: 10px;\n  margin-right: 10px;\n}\n", map: {"version":3,"sources":["/workspace/sitewhere-ide-components/src/components/navigation/InAppSystemBar.vue"],"names":[],"mappings":";AAqDA;EACA,2BAAA;AACA;AACA;EACA,WAAA;EACA,iBAAA;EACA,kBAAA;AACA","file":"InAppSystemBar.vue","sourcesContent":["<template>\n  <v-system-bar color=\"#444\" class=\"title-bar\">\n    <v-btn flat icon small class=\"ma-0 title-bar-button\" @click=\"openWebTools\">\n      <v-icon color=\"white\">menu</v-icon>\n    </v-btn>\n    <span class=\"system-bar-title\">{{ title }}</span>\n    <v-spacer></v-spacer>\n    <v-btn flat icon small class=\"ma-0 title-bar-button\" @click=\"minWindow\">\n      <v-icon color=\"white\">remove</v-icon>\n    </v-btn>\n    <v-btn flat icon small class=\"ma-0 title-bar-button\" @click=\"maxWindow\">\n      <v-icon color=\"white\">check_box_outline_blank</v-icon>\n    </v-btn>\n    <v-btn flat icon small class=\"ma-0 title-bar-button\" @click=\"closeWindow\">\n      <v-icon color=\"white\">close</v-icon>\n    </v-btn>\n  </v-system-bar>\n</template>\n\n<script lang=\"ts\">\nimport Vue from \"vue\";\nimport { Component } from \"sitewhere-ide-common\";\n\n// import Electron from \"electron\";\n\n@Component({})\nexport default class InAppSystemBar extends Vue {\n  title: string = \"Sitewhere Administrative App\"\n\n  openWebTools() {\n    // Electron.remote.getCurrentWebContents().openDevTools();\n    console.log(\"removed Electron\")\n  }\n\n  minWindow() {\n    // Electron.remote.getCurrentWindow().minimize();\n    console.log(\"removed Electron\")\n  }\n\n  maxWindow() {\n    // Electron.remote.getCurrentWindow().maximize();\n    console.log(\"removed Electron\")\n  }\n\n  closeWindow() {\n    // Electron.remote.getCurrentWindow().close();\n    // Electron.app.quit();\n    console.log(\"removed Electron\")\n  }\n}\n</script>\n\n<style scoped>\n.title-bar-button {\n  -webkit-app-region: no-drag;\n}\n.system-bar-title {\n  color: #eee;\n  margin-left: 10px;\n  margin-right: 10px;\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-182508dd_0", { source: "\n.title-bar-button[data-v-182508dd] {\n  -webkit-app-region: no-drag;\n}\n.system-bar-title[data-v-182508dd] {\n  color: #eee;\n  margin-left: 10px;\n  margin-right: 10px;\n}\n", map: {"version":3,"sources":["/workspace/sitewhere-ide-components/src/components/navigation/InAppSystemBar.vue"],"names":[],"mappings":";AA+BA;EACA,2BAAA;AACA;AACA;EACA,WAAA;EACA,iBAAA;EACA,kBAAA;AACA","file":"InAppSystemBar.vue","sourcesContent":["<template>  \n</template>\n\n<script lang=\"ts\">\nimport Vue from \"vue\";\nimport { Component } from \"sitewhere-ide-common\";\n\n@Component({})\nexport default class InAppSystemBar extends Vue {\n  title: string = \"Putang ina mo\"\n\n  openWebTools() {\n    // Electron.remote.getCurrentWebContents().openDevTools();    \n  }\n\n  minWindow() {\n    // Electron.remote.getCurrentWindow().minimize();\n  }\n\n  maxWindow() {\n    // Electron.remote.getCurrentWindow().maximize();\n  }\n\n  closeWindow() {\n    // Electron.remote.getCurrentWindow().close();\n    // Electron.app.quit();\n  }\n}\n</script>\n\n<style scoped>\n.title-bar-button {\n  -webkit-app-region: no-drag;\n}\n.system-bar-title {\n  color: #eee;\n  margin-left: 10px;\n  margin-right: 10px;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$E = "data-v-6245915f";
+    const __vue_scope_id__$E = "data-v-182508dd";
     /* module identifier */
     const __vue_module_identifier__$E = undefined;
     /* functional template */
