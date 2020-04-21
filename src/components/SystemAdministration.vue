@@ -1,11 +1,11 @@
 <template>
   <v-app v-if="user">
-    <sw-in-app-system-bar style="-webkit-app-region: drag" />
+    <!-- <sw-in-app-system-bar style="-webkit-app-region: drag" /> -->
     <v-navigation-drawer fixed :permanent="true" v-model="drawer" app>
       <v-toolbar color="#fff" class="elevation-1" style="height: 47px;" dense>
         <div class="sitewhere-logo" />
         <v-spacer />
-        <v-tooltip bottom>
+        <v-tooltip bottom>          
           <v-btn class="ma-0" icon @click="onLogOut" slot="activator">
             <v-icon class="grey--text text--darken-1">exit_to_app</v-icon>
           </v-btn>
@@ -13,6 +13,14 @@
         </v-tooltip>
       </v-toolbar>
       <sw-navigation :sections="sections" @sectionSelected="onSectionClicked" />
+       <!-- <v-btn              
+              dark              
+              bottom      
+              style="width: 92%; margin: 15px 10px 10px 10px;"
+              @click="onOpenRuleEngine"                 
+            >
+              Open Rule Engine
+            </v-btn> -->
     </v-navigation-drawer>
     <v-content>
       <v-container class="pa-0" fluid fill-height>
@@ -75,26 +83,39 @@ export default class SystemAdministration extends Vue {
       route: "system/microservices",
       longTitle: "Manage Global microservices",
       requireAll: ["ADMINISTER_TENANTS"]
+    },
+    {
+      id: "rule",
+      title: "Rule Engine",
+      icon: "business",
+      route: "system/ruleengine",
+      longTitle: "Global Rule Engine",
+      requireAll: ["ADMINISTER_TENANTS"]
     }
   ];
 
   created() {
     // Set up JWT auto-refresh.
-    this.refreshJwt();
-
-    // Verify that user is logged in.
-    var user = this.$store.getters.user;
-    if (!user) {
-      console.log("No user found in store. Logging out!");
-      this.onLogOut();
-      return;
+    if( localStorage.getItem("devMode")=="1"){
+        console.log("Dev mode. Bypass jwt")
+        user = {};
+    } else{
+        this.refreshJwt();
+        // Verify that user is logged in.
+        var user = this.$store.getters.user;
+        if (!user) {
+        console.log("No user found in store. Logging out!");
+        this.onLogOut();
+        return;
+        }
     }
+    
     this.onSectionClicked(this.$data.sections[0]);
   }
 
   // Get logged in user.
   get user() {
-    return this.$store.getters.user;
+    return this.$store.getters.user||{};
   }
 
   // Get currently selected section.
@@ -161,6 +182,13 @@ export default class SystemAdministration extends Vue {
       console.log("Could not update JWT.");
       component.onLogOut();
     }
+  }
+
+  onOpenRuleEngine(){
+      this.onSectionClicked(this.$data.sections[3]);
+  }
+  onCollapseMenu(){
+      this.drawer = !this.drawer
   }
 }
 </script>

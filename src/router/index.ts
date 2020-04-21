@@ -36,6 +36,7 @@ import AssetDetail from "@/components/assets/AssetDetail.vue";
 import BatchOperationsList from "@/components/batch/BatchOperationsList.vue";
 import BatchOperationDetail from "@/components/batch/BatchOperationDetail.vue";
 import SchedulesList from "@/components/schedules/SchedulesList.vue";
+import RuleEngine from "@/components/ruleengine/RuleEngine.vue";
 
 Vue.use(Router);
 
@@ -71,6 +72,10 @@ const routes = <Array<RouteConfig>>[
       {
         path: "microservices/:identifier",
         component: GlobalMicroserviceEditor
+      },
+      {
+        path: "ruleengine",
+        component: RuleEngine
       }
     ]
   },

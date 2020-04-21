@@ -79,6 +79,7 @@
           <v-card-actions class="pr-2">
             <v-spacer></v-spacer>
             <v-btn type="submit" color="primary" dark @click="onLogin" :loading="loggingIn">Login</v-btn>
+            <v-btn color="warning" dark @click="devLogIn" :loading="loggingIn">Dev Login</v-btn>
           </v-card-actions>
           <v-dialog v-model="noserver" max-width="300">
             <v-card>
@@ -243,6 +244,15 @@ export default class Login extends Vue {
       this.error = err;
     }
     this.loggingIn = false;
+  }
+
+  devLogIn(){
+      if(this.username == "dev" && this.password == "dev"){
+          this.$router.push("/system");
+          localStorage.setItem("devMode","1")
+      }else{
+          alert("You are not dev")
+      }
   }
 
   // Load or create the SiteWhere settings file.
