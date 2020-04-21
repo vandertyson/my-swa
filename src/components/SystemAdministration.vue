@@ -12,15 +12,7 @@
           <span>Log Out</span>
         </v-tooltip>
       </v-toolbar>
-      <sw-navigation :sections="sections" @sectionSelected="onSectionClicked" />
-       <!-- <v-btn              
-              dark              
-              bottom      
-              style="width: 92%; margin: 15px 10px 10px 10px;"
-              @click="onOpenRuleEngine"                 
-            >
-              Open Rule Engine
-            </v-btn> -->
+      <sw-navigation :sections="sections" @sectionSelected="onSectionClicked" />      
     </v-navigation-drawer>
     <v-content>
       <v-container class="pa-0" fluid fill-height>
