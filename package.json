@@ -16,7 +16,7 @@
     "leaflet-draw": "^1.0.2",
     "lodash": "^4.17.5",
     "material-icons": "^0.2.3",
-    "moment": "^2.21.0",
+    "moment": "^2.29.2",
     "mqtt": "^2.16.0",
     "os": "^0.1.1",
     "register-service-worker": "^1.7.1",
